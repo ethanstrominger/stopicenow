@@ -1,0 +1,116 @@
+
+
+<nav class="main-menu">
+  <div class="menu-logo">Fix ICE</div>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <span class="menu-bar"></span>
+    <span class="menu-bar"></span>
+    <span class="menu-bar"></span>
+  </button>
+  <div class="menu-links">
+    <a href="mondaytuesday.html">Monday/Tuesday</a>
+    <a href="mlk.html">MLK</a>
+    <a href="protests.html">Protests</a>
+    <a href="boycott.html">Boycott</a>
+    <a href="donate.html">Donate to Races</a>
+    <a href="email.html">Email Reps</a>
+    <a href="https://forms.gle/imuhSdT6GJ6mhPhy9" target="_blank" rel="noopener">Contact</a>
+  </div>
+</nav>
+<style>
+.main-menu {
+  font-family: 'Georgia', Times, serif;
+  font-size: 18px;
+  background: #fff;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: relative;
+  z-index: 100;
+}
+.main-menu .menu-logo {
+  font-weight: bold;
+  font-size: 22px;
+  margin-right: 32px;
+  font-family: 'Georgia', Times, serif;
+}
+.main-menu .menu-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.main-menu .menu-links a {
+  text-decoration: none;
+  color: #111;
+  padding: 8px 0;
+  transition: color 0.2s;
+  font-weight: normal;
+}
+.main-menu .menu-links a:hover {
+  color: #0072c6;
+}
+.main-menu .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  margin-left: 16px;
+}
+.main-menu .menu-bar {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+@media (max-width: 700px) {
+  .main-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 12px;
+  }
+  .main-menu .menu-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    display: none;
+    background: #fff;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .main-menu .menu-links.open {
+    display: flex;
+  }
+  .main-menu .menu-links a {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 18px;
+  }
+  .main-menu .menu-toggle {
+    display: flex;
+  }
+}
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var menu = document.querySelector('.main-menu');
+    var toggle = document.querySelector('.menu-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        menu.classList.toggle('open');
+      });
+    }
+  });
+</script>

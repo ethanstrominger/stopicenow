@@ -2,304 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Banner and announcement styles */
-    .announcement {
-      background: #fffae6;
-      color: #333;
-      padding: 16px;
-      text-align: left;
-      font-size: 1.1em;
-      border-bottom: 2px solid #ffd700;
-      font-weight: bold;
-    }
+  <!DOCTYPE html>
+  <html lang="en">
 
-    .info-banner {
-      background: #e6f7ff;
-      color: #005580;
-      padding: 12px;
-      text-align: center;
-      font-size: 1em;
-      border-bottom: 1px solid #b3e0ff;
-    }
-
-    .info-banner a {
-      color: #005580;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-
-    .banner-full {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      border-radius: 0 !important;
-      box-sizing: border-box;
-    }
-
-    .banner-main {
-      background: linear-gradient(90deg, #b30000 0%, #0066cc 100%);
-      color: #fff;
-      text-align: center;
-      font-size: 1.7em;
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      padding: 28px 0 12px 0;
-      margin-bottom: 0;
-      border-radius: 0;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
-      text-shadow: 1px 2px 8px #3333;
-    }
-
-    .banner-main .subtitle {
-      font-size: 1.08em;
-      font-weight: 500;
-      color: #fff;
-      margin-top: 6px;
-      letter-spacing: 0;
-      text-shadow: none;
-    }
-
-    .banner-related {
-      background: linear-gradient(90deg, #0066cc 0%, #28a745 100%);
-      color: #fff;
-
-      padding: 14px 0 12px 0;
-      border-radius: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-    }
-
-    .banner-related a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .banner-related .divider {
-      margin: 0 8px;
-    }
-
-    .under-construction {
-      background: #ffe5e5;
-      border-left: 6px solid #b30000;
-      padding: 12px;
-      margin-bottom: 18px;
-      font-weight: 700;
-      font-size: 1.13em;
-      border-radius: 6px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
-    }
-
-    ul {
-      margin-left: 1.1em;
-      padding-left: 1.1em;
-      list-style: none;
-    }
-
-    ul li::before {
-      content: '\2794';
-      /* Unicode heavy arrow ➔ */
-      color: #b30000;
-      font-weight: bold;
-      font-size: 1.35em;
-      display: inline-block;
-      width: 1.2em;
-      margin-left: -1.2em;
-      vertical-align: -0.1em;
-    }
-
-    ul {
-      margin-left: 1.1em;
-      padding-left: 1.1em;
-    }
-
-    .banner {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1.5em;
-    }
-  </style>
-
-  <title>How to Fix ICE</title>
-
-  <style>
-    .banner {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1.5em;
-    }
-  </style>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7 !important;
-      margin: 0;
-      padding: 0;
-    }
-
-    .banner-full {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      border-radius: 0 !important;
-      box-sizing: border-box;
-    }
-
-    /* Ensure menu is always left aligned to browser window */
-    #menu {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: auto;
-      margin: 0;
-      z-index: 1000;
-    }
-
-    h1,
-    h2 {
-      color: #b30000;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .protests,
-    .external {
-      margin-top: 1.5em;
-    }
-
-    .event {
-      margin-bottom: 1em;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .news-article {
-      background-color: #f8f8f8;
-      padding: 15px;
-      border-left: 4px solid #b30000;
-      margin-bottom: 1.5em;
-    }
-
-    .contact-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
-      color: #fff;
-      font-weight: 600;
-      padding: 12px 28px;
-      border-radius: 25px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      text-decoration: none;
-      font-size: 1.1em;
-      margin: 18px 0;
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-
-    .contact-btn:hover {
-      background: linear-gradient(90deg, #0056b3 0%, #007bff 100%);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    }
-
-    .contact-bar {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixICE.org</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
 <body>
+  <div id="site-title-container"></div>
+  <div id="menu-container"></div>
+  <div id="eagle-graphic-container"></div>
+  <script src="title.js"></script>
+  <script src="menu.js"></script>
+        <img src="eagles.jpeg" alt="Protesters with signs"
+          style="width:100%; max-width:1200px; max-height:420px; height:420px; object-fit:cover; display:block; border-radius:0; box-shadow:0 2px 12px rgba(0,0,0,0.13); margin-bottom:1.2em; margin-left:auto; margin-right:auto;">
 
 
-  <div class="container" style="background:#f7f7f7;">
-    <div style="text-align:center; margin-bottom:0.5em; background:#fff;">
-      <h1
-        style="font-size:2.5em; color:#b30000; font-weight:900; margin-bottom:0.1em; margin-top:0; letter-spacing:0.01em;">
-        FIX ICE</h1>
-      <div style="font-size:1.35em; color:#005580; font-weight:600; margin-bottom:0.7em;">Burlington, MA and Beyond
-      </div>
-      <img src="eagles.jpeg" alt="Protesters with signs"
-        style="width:100%; max-width:1200px; max-height:420px; height:420px; object-fit:cover; display:block; border-radius:0; box-shadow:0 2px 12px rgba(0,0,0,0.13); margin-bottom:1.2em; margin-left:auto; margin-right:auto;">
-    </div>
-    <div id="menu-container"></div>
-    <script src="menu.js"></script>
-
-    <div class="announcement" style="margin-top:0; margin-bottom:0; text-align:center;">
-      <!-- Website purpose statement -->
-      We’re working on improvements! Updates to this website are expected to be complete by February, but you can still
-      find
-      helpful information here now.
-    </div>
-    <div class="banner banner-full" style="margin-top:0;"> <a href="protests1000districtave"
-        style="color: #fff; text-decoration: underline;">Protests at 1000 District Ave, Burlington, MA Mon-Sat</a></br>
-      <div class="banner-related">
-        Related sites:
-        <a href="https://bearingwitnessNE.org" target="_blank" rel="noopener">Bearing Witness New England</a>
-        <span class="divider">/</span>
-        <a href="https://nofearstreettheater.com/" target="_blank" rel="noopener">No Fear Street Theater</a>
-        <span class="divider">/</span>
-        <a href="https://www.facebook.com/groups/646621978061995/" target="_blank" rel="noopener">Justice4All</a>
-      </div>
-
-      <div style="max-width:700px;margin:0 auto; background:#e6f2fb; padding-top:1px; padding-bottom:1px;">
-        <div
-          style="     border: 3px solid #b30000; box-shadow: 0 6px 32px rgba(179,0,0,0.13), 0 1.5px 8px rgba(0,0,0,0.08); border-radius: 18px; padding: 36px 30px 30px 30px; margin-bottom: 36px; margin-top:32px; text-align:left;">
-          <h2
-            style="color:#b30000; margin-top:0; font-size:2em; font-weight:900; letter-spacing:0.01em; text-shadow:1px 2px 8px #b3000033; text-align:left;">
-            STOP ICE CRUELTY NOW</h2>
-          <p style="font-size:1.18em; font-weight:600; color:#b30000; text-align:left;">ICE terrorizes communicates and
-            perpetuates violence every day. Take
-            action now and make it impossible for ICE to operate with impunity. Disrupt, protest, and demand change!
-            Pick
-            the action that works best for you and calls to you. This website provides guidance and ideas on actions to
-            take to impede or end ICE operations. There are an overwhelming number of websites for anti-ICE and
-            pro-immigrant
-            actions. The website will curate the most relevant ones. Updates are planned by Feb 14. The website will
-            be organized by type of action: <b>Protest, Advocate, Volunteer, Donate, Boycott</b>
-
-          </p>
-          <ul style="font-size:1.18em; margin-left:1.2em; font-weight:600;">
-            <li><a href="protests" style="color:#b30000; text-decoration:underline; font-weight:700;">Protests in
-                Burlington
-                and beyond</a> </li>
-            <li><a href="https://lucemass.org" target="_blank" rel="noopener"
-                style="color:#b30000; text-decoration:underline; font-weight:700;">Volunteer</a> for I.C.E. watch or
-              hotline
-            </li>
-            <li><a
-                href="https://docs.google.com/document/d/1vgUdGlj4YgRVeJBFa5IGgyXfE51PIPFVL_gSkG7K4Dk/edit?usp=sharing"
-                target="_blank" rel="noopener"
-                style="color:#b30000; text-decoration:underline; font-weight:700;">Write</a>
-              your senator and representative</li>
-            <li><a href="boycott" style="color:#b30000; text-decoration:underline; font-weight:700;">Boycott</a></li>
-            <li><a href="donate" style="color:#b30000; text-decoration:underline; font-weight:700;">Donate</a> to
-              competitive races</li>
-          </ul>
-        </div>
-      </div>
-      <div class="under-construction">
-        🚧 Page under construction. Check back often. 🚧
-      </div>
-    </div>
+  <main
+    style="max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px;">
+    <h1>FixICE.org</h1>
+    <p><strong>A simple place to find ways to act—without getting overwhelmed.</strong></p>
+    <p>Many people want to respond to ICE, deportations, and related policies—but the amount of information,
+      organizations, and actions can feel overwhelming. <strong>. This website was created to make it easier to find <em>one</em>
+        meaningful thing you can do.</strong></p>
+    <p>This site curates actions into a few clear categories, so you can choose what fits your energy, time, and comfort
+      level:</p>
+    <ul>
+      <li><strong>Protest</strong> – show up in person</li>
+      <li><strong>Advocate</strong> – make calls, send postcards, take quick actions</li>
+      <li><strong>Volunteer</strong> – support organizations doing sustained work</li>
+      <li><strong>Donate</strong> – fund effective efforts</li>
+      <li><strong>Boycott</strong> – apply economic pressure</li>
+    </ul>
+    <p>Each section is intentionally limited to <strong>one page</strong>, with links to trusted groups and concrete
+      actions.</p>
+    <hr>
+    <h2>Weekly Standouts at Burlington ICE Detention Center</h2>
+    <p>This group organizes <a href="mondaytuesday">Monday and Tuesday protests</a> 11–1 against the ICE detention center in Burlington. Other
+      groups organize <a href="protests">Wed–Sat protests</a>. See the <a href="protests1000districtave.html">dedicated page</a> for details.  Each group brings a different approachespresence, art, and public witnessing—that strengthen the movement.</p>
+    <hr>
+    <h2>Want more guided and detailed “how do I start?” information?</h2>
+    <p>If you’re looking for step-by-step guidance on how to get involved or start something new, we highly recommend:
+    </p>
+    <p><strong><a href="https://fiftyfifty.one" target="_blank" rel="noopener">5051 website</a>.</strong></p>
+    <p>It’s an excellent resource for understanding how individual actions add up—and how to begin.</p>
+    <hr>
+    <h2>Why this site exists</h2>
+    <p>FixICE.org was created by someone who felt overwhelmed by the volume of information and wanted a calmer way to
+      help others take action.</p>
+    <p>You don’t need to do everything.<br>You just need a place to start.</p>
+  </main>
 </body>
-</div>
+
+</html>
+`

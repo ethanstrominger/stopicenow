@@ -1,3 +1,163 @@
+/* Mobile banner tweaks from index.html */
+@media (max-width: 500px) {
+  .fixice-banner { flex-direction: column !important; gap: 0 !important; padding: 18px 4px 16px 4px !important; }
+}
+
+/* Protests 1000 District Ave page */
+
+/* Protests 1000 District Ave page */
+.menu-container { margin-bottom: 0; padding-bottom: 0; }
+main.fixice-protests1000 h1 { margin-top: 8px; }
+.fixice-protests1000-table { width:100%; border-collapse:collapse; margin-bottom:1em; margin-left:auto; margin-right:auto; }
+.fixice-protests1000-table th { background:#f0f0f0; padding:8px 12px; border:2px solid #bbb; white-space:nowrap; width:110px; vertical-align:top; }
+.fixice-protests1000-table td { padding:8px 12px; border:2px solid #bbb; vertical-align:top; }
+
+/* MondayTuesday page */
+body.mondaytuesday { line-height: 1.6; max-width: 700px; margin: auto; padding: 24px; background: linear-gradient(120deg, #f8f8f8 60%, #e3e9f7 100%); }
+#menu { position: fixed; left: 0; top: 0; width: auto; margin: 0; z-index: 1000; }
+h1.mondaytuesday { color: #b30000; text-align: center; margin-bottom: 0.5em; }
+.protest-info { background: #fff8f6; border-left: 5px solid #b30000; padding: 22px; border-radius: 10px; margin: 32px 0 24px 0; font-size: 1.15em; box-shadow: 0 2px 12px rgba(179,0,0,0.06); }
+.action-bar { text-align: center; margin: 18px 0 0 0; }
+.action-btn { display: inline-block; background: linear-gradient(90deg, #007bff 0%, #0056b3 100%); color: #fff; font-weight: 600; padding: 12px 28px; border-radius: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; font-size: 1.1em; margin: 0 10px 10px 10px; transition: background 0.2s, box-shadow 0.2s; }
+.action-btn:hover { background: linear-gradient(90deg, #0056b3 0%, #007bff 100%); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+
+/* Win-elections page */
+.win-elections-body { background: #f7f7f7; }
+.win-elections-container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px; }
+.win-elections-h1 { color: #b30000; margin-bottom: 18px; }
+.win-elections-h2 { color: #0066cc; margin-top: 32px; }
+.win-elections-ul { margin-left: 1.2em; }
+.win-elections-a { color: #b30000; text-decoration: underline; }
+.win-elections-button { display: inline-block; background: linear-gradient(90deg, #b30000 0%, #0066cc 100%); color: #fff; font-weight: 600; padding: 12px 28px; border-radius: 25px; text-decoration: none; margin: 18px 0; font-size: 1.1em; }
+.win-elections-button:hover { background: linear-gradient(90deg, #0066cc 0%, #b30000 100%); }
+
+/* Contact page */
+.home-link { position:absolute; top:18px; right:18px; z-index:10; font-size:0.95em; color:#222; background:#f3f3f3; border:1px solid #bbb; border-radius:6px; padding:4px 10px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+
+/* Send-letter page */
+.send-letter-body { font-family: Arial, sans-serif; margin: 2em; background: #f7f7f7; }
+.send-letter-container { background: #fff; padding: 2em; border-radius: 8px; max-width: 600px; margin: auto; box-shadow: 0 2px 8px #0001; }
+.send-letter-label { display: block; margin-top: 1em; }
+.send-letter-input { width: 100%; padding: 0.5em; margin-top: 0.2em; border-radius: 4px; border: 1px solid #ccc; }
+.send-letter-button, .mailto-link { margin-top: 1.5em; padding: 0.7em 1.5em; border: none; border-radius: 4px; background: #1976d2; color: #fff; font-size: 1em; cursor: pointer; text-decoration: none; display: inline-block; }
+.send-letter-button:hover, .mailto-link:hover { background: #125ea2; }
+.send-letter-textarea { width: 100%; padding: 0.5em; border-radius: 4px; border: 1px solid #ccc; margin-top: 1em; }
+
+/* 50501 page */
+.groups-body { background: #f7f7f7; }
+.groups-container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px; }
+.groups-h1 { color: #b30000; margin-bottom: 18px; }
+.groups-table { width: 100%; border-collapse: collapse; margin-top: 1.5em; }
+.groups-th, .groups-td { border: 1px solid #bbb; padding: 10px; text-align: left; }
+.groups-th { background: #eaf6ff; color: #005580; }
+.groups-tr:nth-child(even) { background: #f7f7f7; }
+.spreadsheet-link { margin-top: 2em; display: block; font-size: 1.1em; }
+.table-responsive { width: 100%; overflow-x: auto; }
+@media (max-width: 700px) {
+  .groups-table { min-width: 900px; }
+  .table-responsive::after {
+    content: '← Scroll right for more →';
+    display: block;
+    text-align: center;
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 4px;
+  }
+}
+/* Main menu styles from menu.html */
+.main-menu {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  background: #e6f2fb;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 100;
+  white-space: nowrap;
+  overflow-x: auto;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+.main-menu .menu-logo {
+  font-weight: bold;
+  font-size: 22px;
+  margin-right: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-menu .menu-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-left: 32px;
+}
+.main-menu .menu-links a {
+  text-decoration: none;
+  color: #111;
+  padding: 8px 0;
+  transition: color 0.2s;
+  font-weight: normal;
+}
+.main-menu .menu-links a:hover {
+  color: #0072c6;
+}
+.main-menu .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  margin-left: 16px;
+}
+.main-menu .menu-bar {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+@media (max-width: 700px) {
+  .main-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 12px;
+    white-space: normal;
+    overflow-x: visible;
+  }
+  .main-menu .menu-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    display: none;
+    background: #f5f5f5;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  }
+  .main-menu .menu-links.open {
+    display: flex;
+  }
+  .main-menu .menu-links a {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 18px;
+  }
+  .main-menu .menu-toggle {
+    display: flex;
+  }
+}
 .inside-ice-info {
   background: #f8f8f8;
   border-left: 5px solid #b30000;
@@ -85,9 +245,8 @@ a.button:hover {
   border-left: 4px solid #b30000;
   padding: 16px;
   margin-bottom: 24px;
-  font-weight: 600;
 }
-# Hero image on home page
+
 .fixice-hero {
   width: 100%;
   max-width: 1200px;
@@ -102,7 +261,7 @@ a.button:hover {
   margin-right: auto;
 }
 
-# Navigation bar on home page
+/* Navigation bar on home page */
 .fixice-nav {
   display: flex;
   gap: 18px;
@@ -117,7 +276,7 @@ a.button:hover {
   font-weight: 600;
 }
 
-# Main content area on home page
+/* Main content area on home page */
 .fixice-main {
   max-width: 700px;
   margin: 0px auto 40px auto;
@@ -137,14 +296,16 @@ a.button:hover {
   color: #7a5c00;
   text-align: center;
   padding: 12px 8px;
-  font-size: 1.25em;
   font-weight: 600;
   border-bottom: 2px solid #ffd700;
   z-index: 1000;
   box-sizing: border-box;
 }
 
-
+/* Add space below the fixed banner for the site title */
+  #site-title-container {
+    margin-top: 16px;
+  }
 
 #site-title-container > div {
   padding-top: 32px;

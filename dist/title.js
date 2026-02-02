@@ -8,8 +8,7 @@ function insertSiteTitle() {
   if (!container) return;
     container.innerHTML = `
       <div style="text-align:center; background:#fff;">
-        <h1 class="fixice-title">FIX ICE</h1>
-        <div class="fixice-subtitle">Burlington, MA and Beyond</div>
+
       </div>
     `;
 }

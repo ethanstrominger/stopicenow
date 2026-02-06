@@ -14,8 +14,6 @@
   <script src="event-listener.js"></script>
       var strategyHandler = function() {
         console.log('Strategy dropdown changed:', strategyMenu.value);
-        showDebug('Strategy dropdown changed: ' + strategyMenu.value);
-        alert('Strategy dropdown changed: ' + strategyMenu.value);
         if (strategyMenu.value) {
           if (causeMenu) causeMenu.value = '';
           window.location = 'link-explorer-experimental.html?strategy=' + encodeURIComponent(strategyMenu.value);
@@ -30,11 +28,8 @@
     }
     if (causeMenu) {
       console.log('Cause dropdown found');
-      showDebug('Cause dropdown found');
       var causeHandler = function() {
         console.log('Cause dropdown changed:', causeMenu.value);
-        showDebug('Cause dropdown changed: ' + causeMenu.value);
-        alert('Cause dropdown changed: ' + causeMenu.value);
         if (causeMenu.value) {
           if (strategyMenu) strategyMenu.value = '';
           window.location = 'link-explorer-experimental.html?cause=' + encodeURIComponent(causeMenu.value);

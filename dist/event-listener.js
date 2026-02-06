@@ -7,12 +7,9 @@ var dropdown = document.getElementById('test-dropdown');
 var button = document.getElementById('test-button');
 if (dropdown) {
   dropdown.addEventListener('change', function() {
-    showDebug('Dropdown changed: ' + dropdown.value);
-    alert('Dropdown changed: ' + dropdown.value);
     console.log('Dropdown changed:', dropdown.value);
   });
   dropdown.onchange = function() {
-    showDebug('Dropdown onchange fired: ' + dropdown.value);
     console.log('Dropdown onchange fired:', dropdown.value);
   };
 } else {
@@ -20,14 +17,12 @@ if (dropdown) {
 }
 if (button) {
   button.addEventListener('click', function() {
-    showDebug('Button clicked');
-    alert('Button clicked');
     console.log('Button clicked');
   });
 } else {
   showDebug('Button NOT found');
 }
-showDebug('Script loaded and listeners attached');
+console.log('Script loaded and listeners attached');
 
 function initMenuExperimental() {
   var debugDiv = document.getElementById('menu-debug-status');
@@ -50,12 +45,8 @@ function initMenuExperimental() {
   var strategyMenu = document.getElementById('menu-strategy-menu');
   var causeMenu = document.getElementById('menu-cause-menu');
   if (strategyMenu) {
-    console.log('Strategy dropdown found');
-    showDebugMenu('Strategy dropdown found');
-    var strategyHandler = function() {
+    console.log('Strategy dropdown found');    var strategyHandler = function() {
       console.log('Strategy dropdown changed:', strategyMenu.value);
-      showDebugMenu('Strategy dropdown changed: ' + strategyMenu.value);
-      alert('Strategy dropdown changed: ' + strategyMenu.value);
       if (strategyMenu.value) {
         if (causeMenu) causeMenu.value = '';
         window.location = 'link-explorer-experimental.html?strategy=' + encodeURIComponent(strategyMenu.value);
@@ -70,11 +61,8 @@ function initMenuExperimental() {
   }
   if (causeMenu) {
     console.log('Cause dropdown found');
-    showDebugMenu('Cause dropdown found');
     var causeHandler = function() {
       console.log('Cause dropdown changed:', causeMenu.value);
-      showDebugMenu('Cause dropdown changed: ' + causeMenu.value);
-      alert('Cause dropdown changed: ' + causeMenu.value);
       if (causeMenu.value) {
         if (strategyMenu) strategyMenu.value = '';
         window.location = 'link-explorer-experimental.html?cause=' + encodeURIComponent(causeMenu.value);

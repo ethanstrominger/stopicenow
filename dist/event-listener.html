@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div class="fixice-share-buttons">
+    <!-- ...same social buttons as menu.html... -->
+  </div>
+  <div class="fixice-banner">
+    Site Under Construction: Some info is incomplete. Check back weekly for updates. A brief history of changes will be posted so you can see what’s new. This banner will be removed when the site is finished.
+  </div>
+  <div style="text-align:center; background:#fff; margin-bottom: 0.5em;">
+    <h1 class="fixice-title" style="margin-bottom:0.1em; margin-top:0;">FIX ICE</h1>
+    <div class="fixice-subtitle" style="margin-bottom:0.7em;">Burlington, MA and Beyond</div>
+  </div>
+  <nav class="main-menu">
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+      <div class="menu-links" style="display:flex;align-items:center;gap:1.2em;background:#23408e;padding:0.7em 1.5em;border-radius:0 0 10px 10px;box-shadow:0 2px 8px #0002;">
+        <a href="link-explorer-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Resources</a>
+        <select id="menu-strategy-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
+          <option value="">Resources By Strategy</option>
+          <option value="donate">Donate</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="learn">Learn</option>
+          <option value="advocate">Advocate</option>
+          <option value="protest">Protest</option>
+        </select>
+        <select id="menu-cause-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
+          <option value="">Resources By Cause</option>
+          <option value="Elections">Elections</option>
+          <option value="ICE/Immigration">ICE/Immigration</option>
+        </select>
+        <a href="protests1000districtave-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">1000 District Ave</a>
+        <a href="parking-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Parking</a>
+        <a href="contact-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Contact</a>
+        <a href="https://www.facebook.com/groups/774935765037658" target="_blank" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Join Facebook</a>
+        <a href="index.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Standard</a>
+      </div>
+  </nav>
+  <div class="related-sites-banner" style="background:#eaf6ff;border-bottom:1px solid #b3d8f5;padding:0.7em 1.2em;text-align:center;font-size:1.08em;">
+    <strong>Related Sites:</strong>
+    <a href="https://bearingwitnessne.org" target="_blank" rel="noopener" style="margin:0 0.7em;">Bearing Witness New England</a>
+    <a href="https://nofearstreettheater.org" target="_blank" rel="noopener" style="margin:0 0.7em;">No Fear Street Theater</a>
+    <a href="https://www.facebook.com/groups/646621978061995/" target="_blank" rel="noopener" style="margin:0 0.7em;">Justice4All Thursdays</a>
+  </div>
+  <div id="menu-debug-status" style="background:#ffe0e0;color:#a00;padding:0.5em 1em;margin:1em 0;border-radius:5px;font-weight:bold;display:none;"></div>
+  <script>
+    function initMenuExperimental() {
+      var debugDiv = document.getElementById('menu-debug-status');
+      function showDebug(msg) {
+        if (debugDiv) {
+          debugDiv.style.display = 'block';
+          debugDiv.textContent = msg;
+        }
+      }
+      var menu = document.querySelector('.main-menu');
+      var toggle = document.querySelector('.menu-toggle');
+      if (toggle) {
+        console.log('Toggle found');
+        toggle.addEventListener('click', function () {
+          menu.classList.toggle('open');
+        });
+      } else {
+        showDebug('Menu toggle not found');
+      }
+      // Dropdown navigation for strategy and cause
+      var strategyMenu = document.getElementById('menu-strategy-menu');
+      var causeMenu = document.getElementById('menu-cause-menu');
+      if (strategyMenu) {
+        console.log('Strategy dropdown found');
+        showDebug('Strategy dropdown found');
+        var strategyHandler = function() {
+          console.log('Strategy dropdown changed:', strategyMenu.value);
+          showDebug('Strategy dropdown changed: ' + strategyMenu.value);
+          alert('Strategy dropdown changed: ' + strategyMenu.value);
+          if (strategyMenu.value) {
+            if (causeMenu) causeMenu.value = '';
+            window.location = 'link-explorer-experimental.html?strategy=' + encodeURIComponent(strategyMenu.value);
+          } else {
+            window.location = 'link-explorer-experimental.html';
+          }
+        };
+        strategyMenu.addEventListener('change', strategyHandler);
+        strategyMenu.onchange = strategyHandler;
+      } else {
+        showDebug('Strategy dropdown NOT found');
+      }
+      if (causeMenu) {
+        console.log('Cause dropdown found');
+        showDebug('Cause dropdown found');
+        var causeHandler = function() {
+          console.log('Cause dropdown changed:', causeMenu.value);
+          showDebug('Cause dropdown changed: ' + causeMenu.value);
+          alert('Cause dropdown changed: ' + causeMenu.value);
+          if (causeMenu.value) {
+            if (strategyMenu) strategyMenu.value = '';
+            window.location = 'link-explorer-experimental.html?cause=' + encodeURIComponent(causeMenu.value);
+          } else {
+            window.location = 'link-explorer-experimental.html';
+          }
+        };
+        causeMenu.addEventListener('change', causeHandler);
+        causeMenu.onchange = causeHandler;
+      } else {
+        showDebug('Cause dropdown NOT found');
+      }
+      // Switch menu logic
+      var switchBtn = document.getElementById('switch-menu');
+      if (switchBtn) {
+        console.log('Switch menu button found');
+        switchBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('Switching to standard menu!');
+          localStorage.setItem('fixice-menu', 'standard');
+          window.location = 'menu.html';
+        });
+      } else {
+        showDebug('Switch menu button NOT found');
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMenuExperimental);
+    } else {
+      initMenuExperimental();
+    }
+  </script>
+  <script>
+  function initMenuExperimental() {
+    var debugDiv = document.getElementById('menu-debug-status');
+    function showDebug(msg) {
+      if (debugDiv) {
+        debugDiv.style.display = 'block';
+        debugDiv.textContent = msg;
+      }
+    }
+    var menu = document.querySelector('.main-menu');
+    var toggle = document.querySelector('.menu-toggle');
+    if (toggle) {
+      console.log('Toggle found');
+      toggle.addEventListener('click', function () {
+        menu.classList.toggle('open');
+      });
+    } else {
+      showDebug('Menu toggle not found');
+    }
+    // Dropdown navigation for strategy and cause
+    var strategyMenu = document.getElementById('menu-strategy-menu');
+    var causeMenu = document.getElementById('menu-cause-menu');
+    if (strategyMenu) {
+      console.log('Strategy dropdown found');
+      showDebug('Strategy dropdown found');
+      var strategyHandler = function() {
+        console.log('Strategy dropdown changed:', strategyMenu.value);
+        showDebug('Strategy dropdown changed: ' + strategyMenu.value);
+        alert('Strategy dropdown changed: ' + strategyMenu.value);
+        if (strategyMenu.value) {
+          if (causeMenu) causeMenu.value = '';
+          window.location = 'link-explorer-experimental.html?strategy=' + encodeURIComponent(strategyMenu.value);
+        } else {
+          window.location = 'link-explorer-experimental.html';
+        }
+      };
+      strategyMenu.addEventListener('change', strategyHandler);
+      strategyMenu.onchange = strategyHandler;
+    } else {
+      showDebug('Strategy dropdown NOT found');
+    }
+    if (causeMenu) {
+      console.log('Cause dropdown found');
+      showDebug('Cause dropdown found');
+      var causeHandler = function() {
+        console.log('Cause dropdown changed:', causeMenu.value);
+        showDebug('Cause dropdown changed: ' + causeMenu.value);
+        alert('Cause dropdown changed: ' + causeMenu.value);
+        if (causeMenu.value) {
+          if (strategyMenu) strategyMenu.value = '';
+          window.location = 'link-explorer-experimental.html?cause=' + encodeURIComponent(causeMenu.value);
+        } else {
+          window.location = 'link-explorer-experimental.html';
+        }
+      };
+      causeMenu.addEventListener('change', causeHandler);
+      causeMenu.onchange = causeHandler;
+    } else {
+      showDebug('Cause dropdown NOT found');
+    }
+    // Switch menu logic
+    var switchBtn = document.getElementById('switch-menu');
+    if (switchBtn) {
+      console.log('Switch menu button found');
+      switchBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Switching to standard menu!');
+        localStorage.setItem('fixice-menu', 'standard');
+        window.location = 'menu.html';
+      });
+    } else {
+      showDebug('Switch menu button NOT found');
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMenuExperimental);
+  } else {
+    initMenuExperimental();
+  }
+        </select>
+        <a href="protests1000districtave-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">1000 District Ave</a>
+        <a href="parking-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Parking</a>
+        <a href="contact-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Contact</a>
+        <a href="https://www.facebook.com/groups/774935765037658" target="_blank" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Join Facebook</a>
+        <a href="index.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Standard</a>
+      </div>
+  </nav>
+  <div class="related-sites-banner" style="background:#eaf6ff;border-bottom:1px solid #b3d8f5;padding:0.7em 1.2em;text-align:center;font-size:1.08em;">
+    <strong>Related Sites:</strong>
+    <a href="https://bearingwitnessne.org" target="_blank" rel="noopener" style="margin:0 0.7em;">Bearing Witness New England</a>
+    <a href="https://nofearstreettheater.org" target="_blank" rel="noopener" style="margin:0 0.7em;">No Fear Street Theater</a>
+    <a href="https://www.facebook.com/groups/646621978061995/" target="_blank" rel="noopener" style="margin:0 0.7em;">Justice4All Thursdays</a>
+  </div>
+  <!-- END MENU-EXPERIMENTAL INCLUDE -->
+  <h2>Event Listener Test Page</h2>
+  <select id="test-dropdown">
+    <option value="">Choose an option</option>
+    <option value="one">Option One</option>
+    <option value="two">Option Two</option>
+  </select>
+  <button id="test-button">Test Button</button>
+  <div id="debug-status"></div>
+
+  <script src="event-listener.js"></script>
+</body>
+</html>

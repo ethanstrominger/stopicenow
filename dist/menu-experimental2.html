@@ -16,15 +16,7 @@
   </button>
     <div class="menu-links" style="display:flex;align-items:center;gap:1.2em;background:#23408e;padding:0.7em 1.5em;border-radius:0 0 10px 10px;box-shadow:0 2px 8px #0002;">
       <a href="link-explorer-experimental.html" style="color:#fff;font-weight:600;text-decoration:none;padding:0.4em 1em;border-radius:5px;transition:background 0.2s;">Resources</a>
-      <select id="menu-category-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
-        <option value="">Resources By Category</option>
-        <option value="legal">Legal Aid</option>
-        <option value="housing">Housing</option>
-        <option value="health">Health</option>
-        <option value="education">Education</option>
-        <option value="community">Community</option>
-      </select>
-      <select id="menu-strategy-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
+      <select id="strategy-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
         <option value="">Resources By Strategy</option>
         <option value="donate">Donate</option>
         <option value="volunteer">Volunteer</option>
@@ -32,7 +24,7 @@
         <option value="advocate">Advocate</option>
         <option value="protest">Protest</option>
       </select>
-      <select id="menu-cause-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
+      <select id="cause-menu" style="background:#fff;color:#23408e;font-weight:600;border:none;padding:0.4em 1em;border-radius:5px;cursor:pointer;min-width:170px;">
         <option value="">Resources By Cause</option>
         <option value="Elections">Elections</option>
         <option value="ICE/Immigration">ICE/Immigration</option>
@@ -52,54 +44,12 @@
 </div>
 <!-- Move script to end of body for reliable DOM access -->
 
-<select id="test-dropdown">
-  <option value="">Choose an option</option>
-  <option value="one">Option One</option>
-  <option value="two">Option Two</option>
-</select>
-<button id="test-button">Test Button</button>
-<div id="debug-status"></div>
-
-<script>
-  function showDebug(msg) {
-    var debugDiv = document.getElementById('debug-status');
-    debugDiv.style.display = 'block';
-    debugDiv.textContent = msg;
-  }
-  var dropdown = document.getElementById('test-dropdown');
-  var button = document.getElementById('test-button');
-  if (dropdown) {
-    dropdown.addEventListener('change', function() {
-      showDebug('Dropdown changed: ' + dropdown.value);
-      alert('Dropdown changed: ' + dropdown.value);
-      console.log('Dropdown changed:', dropdown.value);
-    });
-    dropdown.onchange = function() {
-      showDebug('Dropdown onchange fired: ' + dropdown.value);
-      console.log('Dropdown onchange fired:', dropdown.value);
-    };
-  } else {
-    showDebug('Dropdown NOT found');
-  }
-  if (button) {
-    button.addEventListener('click', function() {
-      showDebug('Button clicked');
-      alert('Button clicked');
-      console.log('Button clicked');
-    });
-  } else {
-    showDebug('Button NOT found');
-  }
-  showDebug('Script loaded and listeners attached');
-</script>
-
-<div id="menu-debug-status" style="background:#ffe0e0;color:#a00;padding:0.5em 1em;margin:1em 0;border-radius:5px;font-weight:bold;display:none;"></div>
+<div id="debug-status" style="background:#ffe0e0;color:#a00;padding:0.5em 1em;margin:1em 0;border-radius:5px;font-weight:bold;display:none;"></div>
 
 </body>
-</script>
 <script>
-function initMenuExperimental() {
-  var debugDiv = document.getElementById('menu-debug-status');
+document.addEventListener('DOMContentLoaded', function() {
+  var debugDiv = document.getElementById('debug-status');
   function showDebug(msg) {
     if (debugDiv) {
       debugDiv.style.display = 'block';
@@ -117,9 +67,8 @@ function initMenuExperimental() {
     showDebug('Menu toggle not found');
   }
   // Dropdown navigation for strategy and cause
-  var strategyMenu = document.getElementById('menu-strategy-menu');
-  var causeMenu = document.getElementById('menu-cause-menu');
-  var categoryMenu = document.getElementById('menu-category-menu');
+  var strategyMenu = document.getElementById('strategy-menu');
+  var causeMenu = document.getElementById('cause-menu');
   if (strategyMenu) {
     console.log('Strategy dropdown found');
     showDebug('Strategy dropdown found');
@@ -158,27 +107,6 @@ function initMenuExperimental() {
   } else {
     showDebug('Cause dropdown NOT found');
   }
-  if (categoryMenu) {
-    console.log('Category dropdown found');
-    showDebug('Category dropdown found');
-    var categoryHandler = function() {
-      console.log('Category dropdown changed:', categoryMenu.value);
-      showDebug('Category dropdown changed: ' + categoryMenu.value);
-      alert('Category dropdown changed: ' + categoryMenu.value);
-      if (categoryMenu.value) {
-        // Reset other dropdowns
-        if (strategyMenu) strategyMenu.value = '';
-        if (causeMenu) causeMenu.value = '';
-        window.location = 'link-explorer-experimental.html?category=' + encodeURIComponent(categoryMenu.value);
-      } else {
-        window.location = 'link-explorer-experimental.html';
-      }
-    };
-    categoryMenu.addEventListener('change', categoryHandler);
-    categoryMenu.onchange = categoryHandler;
-  } else {
-    showDebug('Category dropdown NOT found');
-  }
   // Switch menu logic
   var switchBtn = document.getElementById('switch-menu');
   if (switchBtn) {
@@ -192,12 +120,6 @@ function initMenuExperimental() {
   } else {
     showDebug('Switch menu button NOT found');
   }
-}
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMenuExperimental);
-} else {
-  initMenuExperimental();
-}
-</script>
+});
 </script>
 </html>

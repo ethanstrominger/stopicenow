@@ -8,7 +8,7 @@ Cause: Elections
 
 Link: https://www.cookpolitical.com/ratings/senate-race-ratings
 Title: cookpolitical
-Description: xxxx Nonpartisan analysis of competitive U.S. Senate races, useful for donors and advocates.
+Description: Nonpartisan analysis of competitive U.S. Senate races, useful for donors and advocates.
 Activities: $ donate, 📚 learn
 Cause: Elections
 

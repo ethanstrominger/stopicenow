@@ -17,39 +17,36 @@
   </style>
 </head>
 <body>
-  <div id="menu-container"></div>
-  <div class="container">
+<div style="text-align:center; background:#fff; margin-bottom: 0.5em;">
+    <h1 class="fixice-title" style="margin-bottom:0.1em; margin-top:0;">FIX ICE</h1>
+    <div class="fixice-subtitle" style="margin-bottom:0.7em;">Burlington, MA and Beyond</div>
+</div>  <div class="container">
+    <a href="https://FixICE.org" target="_blank" style="font-size:0.85em; color:#0066cc; text-decoration:underline; display:block; margin-bottom:0.7em;">FixICE.org</a>
     <h1>Weekly Fundraiser</h1>
-    <p style="font-size:1.1em; color:#444; margin-bottom:0.3em;">Every Wednesday there will be a new fundraiser. Fund raiser for the week starting 2/11 is North Shore Luce.</p>
+    <p style="font-size:1.1em; color:#444; margin-bottom:0.3em;">Every Wednesday Fix ICE will announce a new anti-ice/pro-immigrant fundraiser. Fund raiser for the week starting 2/11 is North Shore Luce.</p>
     <div class="links" style="margin-top:0.5em;margin-bottom:0em;">
       <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0em;">
           <div style="display:flex;flex-direction:row;align-items:flex-end;">
-            <a href="https://www.northshoreluce.org/donate" target="_blank" style="text-decoration:none;font-weight:bold;font-size:1.1em;display:flex;align-items:flex-end; color:#0066cc; text-decoration:underline; margin-top:32px;">Donate to North Shore LUCE</a>
+            <a href="hhttps://givebutter.com/NSLUCE/donate" target="_blank" style="text-decoration:none;font-weight:bold;font-size:1.1em;display:flex;align-items:flex-end; color:#0066cc; text-decoration:underline; margin-top:32px;">Donate to North Shore LUCE</a>
             <img src="https://images.squarespace-cdn.com/content/v1/67d4398453efd61999ebaabf/d56d5b78-6cab-4231-bef9-1dd3f855e052/LUCE-logo-v1.png" alt="Butterfly Logo" style="max-width:135px; height:auto; margin-left:24px;">
           </div>
         </div>
       </div>
       <a href="https://givebutter.com/NSLUCE" target="_blank" style="color:#0066cc; font-weight:bold; font-size:1.1em; text-decoration:underline; margin-top:1em; display:block;">Information about North Shore LUCE</a>
       <a href="https://lucemass.org" target="_blank" style="color:#0066cc; font-weight:bold; font-size:1.1em; text-decoration:underline; margin-top:1em; display:block;">Information about LUCE Mass</a>
-    </div>
-    <div style="font-size:1em; color:#444; margin-bottom:1.5em;">This week's fundraiser supports legal advocacy and immigrant rights through LUCE. Your donation helps provide critical legal services and community support.</div>
-    <form id="donation-form">
-      <label for="amount">How much did you donate?</label>
+    <div style="margin-top:1em;"></div>
+    <form id="donation-form" style="margin-top:0.5em;">
+      <label for="amount">How much will you donate?</label>
       <input type="number" id="amount" name="amount" min="1" step="any" required>
       <button type="submit">Save Donation Amount</button>
       <div class="success" id="success-message" style="display:none;">Thank you! Your donation has been recorded.</div>
+      <div id="total-donated" style="margin-top:2em;"></div>
     </form>
-    <div id="total-donated" style="margin-top:2em;"></div>
+    <a href="https://FixICE.org" target="_blank" style="font-size:0.85em; color:#0066cc; text-decoration:underline; display:block; margin-top:0.7em;">FixICE.org</a>
+        </div>
+
   </div>
   <script>
-    // Load menu-experimental
-    fetch('menu-experimental.html').then(r => r.text()).then(html => {
-      document.getElementById('menu-container').innerHTML = html;
-      if (typeof initMenuExperimental === 'function') {
-        initMenuExperimental();
-      }
-    });
-    // Save donation to localStorage and show total
     function updateTotal() {
       let total = 0;
       const donations = JSON.parse(localStorage.getItem('nsluce_donations') || '[]');

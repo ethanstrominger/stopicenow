@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Resources</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu-container"></div>
+  <main style="max-width:700px;margin:2em auto 0 auto;padding:1.5em;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0001;">
+    <h2>All Resources</h2>
+    <div id="resources-list"></div>
+  </main>
+  <script>
+    fetch('menu-experimental.html').then(r => r.text()).then(html => {
+      document.getElementById('menu-container').innerHTML = html;
+      var script = document.createElement('script');
+      script.src = 'event-listener.js';
+      script.onload = function() {
+        if (typeof initMenuExperimental === 'function') {
+          initMenuExperimental();
+        }
+      };
+      document.body.appendChild(script);
+    });
+  </script>
+  <script src="resources.js"></script>
+</body>
+</html>

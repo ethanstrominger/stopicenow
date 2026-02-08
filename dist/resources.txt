@@ -1,0 +1,29 @@
+s# resources.txt
+# Format: name | description | link
+
+# Extracted unique root URLs from link-list.txt
+# (Only the protocol and domain, nothing after the first /)
+
+Amazon Immigrant Aid Wishlist | Purchase items directly for immigrants in need via Amazon. | https://www.amazon.com
+ACLU Massachusetts | Legal advocacy and support for civil liberties and immigrant rights. | https://aclum.org
+BIJAN Bond Fund | Boston Immigrant Justice Accompaniment Network bond fund for detained immigrants. | https://beyondbondboston.org
+Cook Political House Ratings | Competitive House races (Cook Political Report) | https://www.cookpolitical.com
+Indivisible Group Finder | Find Your Indivisible Group | https://indivisible-ma.org
+Indivisible LAB | Grassroots advocacy group supporting immigrant rights and progressive causes. | https://indivisiblelab.org
+Lawyers for Civil Rights | Legal support and advocacy for civil rights and immigrants. | https://lawyersforcivilrights.org
+LUCE Immigrant Justice Network | Resource hub and hotline for Massachusetts immigrants. | https://lucemass.org
+Massachusetts Immigrant & Refugee Advocacy Coalition | Massachusetts Immigrant & Refugee Advocacy Coalition, supporting immigrant rights. | https://miracoalition.org
+Mobilize Get Out the Vote | Get Out the Vote campaigns (Mobilize) | https://www.mobilize.us
+Mobilize National Events | Find protests and events nationwide on mobilize.us | https://mobilize.us
+No Fear Street Theater Actions | No Fear Street Theater list | https://www.nofearstreettheater.com
+Operation Milkweed | Emergency aid for community members in crisis. | https://www.instagram.com
+POIC Cosponsor Letter Campaign | Letter campaign for POIC cosponsor | https://actionnetwork.org
+Progressive Massachusetts Legislator Scorecard | How Massachusetts legislators have voted (Progressive Mass Scorecard) | https://scorecard.progressivemass.com
+Protests 1000 District Ave | Burlington ICE Detention Center Standouts | https://protests1000districtave.html
+St. Peter's San Pedro Mutual Aid | Provides coats, diapers, and mutual aid for immigrants. | https://www.stpeters-sanpedro.org
+State and Local Elections Alliance | Drives resources to impactful non-federal races, maximizing influence for donors and volunteers. | https://state-elections.org
+Swing Blue Alliance Calendar | Swing Blue Alliance calendar | https://swingbluealliance.org
+Turn Purple 2 Blue | Turn Purple to Blue | https://turnpurple2blue.org
+Venmo - Barbara Roy | Printing, supplies, and materials for immigrant support coalition. | https://venmo.com
+Welcome Immigrant Network | Mutual aid and emergency support for immigrants in Salem, MA. | https://www.welcomeimmigrantnetwork.org
+413 Staying Connected for Action | 413 Staying Connected for Action | https://www.facebook.com

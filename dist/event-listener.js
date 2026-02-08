@@ -75,10 +75,22 @@ function initMenuExperimental() {
           opt.textContent = cause;
           causeMenu.appendChild(opt);
         });
+        // Set cause dropdown to match URL param
+        const params = new URLSearchParams(window.location.search);
+        const causeParam = params.get('cause');
+        if (causeParam) {
+          causeMenu.value = causeParam;
+        }
       });
   }
   if (strategyMenu) {
     console.log('Strategy dropdown found');
+    // Set strategy dropdown to match URL param
+    const params = new URLSearchParams(window.location.search);
+    const strategyParam = params.get('strategy');
+    if (strategyParam) {
+      strategyMenu.value = strategyParam;
+    }
     var strategyHandler = function() {
       console.log('Strategy dropdown changed:', strategyMenu.value);
       if (strategyMenu.value) {

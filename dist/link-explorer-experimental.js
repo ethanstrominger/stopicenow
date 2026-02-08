@@ -74,9 +74,11 @@ async function loadStrategySymbols() {
   return map;
 }
 
+
 const params = new URLSearchParams(window.location.search);
 const cause = params.get('cause');
 const strategy = params.get('strategy');
+
 
 function filterByStrategy(records, selectedStrategy) {
 	if (!selectedStrategy) return records;

@@ -1,7 +1,11 @@
 function showDebug(msg) {
   var debugDiv = document.getElementById('debug-status');
-  debugDiv.style.display = 'block';
-  debugDiv.textContent = msg;
+  if (debugDiv) {
+    debugDiv.style.display = 'block';
+    debugDiv.textContent = msg;
+  } else {
+    console.log('DEBUG:', msg);
+  }
 }
 var dropdown = document.getElementById('test-dropdown');
 var button = document.getElementById('test-button');

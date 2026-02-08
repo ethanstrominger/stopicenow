@@ -59,6 +59,24 @@ function initMenuExperimental() {
   }
   var strategyMenu = document.getElementById('menu-strategy-menu');
   var causeMenu = document.getElementById('menu-cause-menu');
+  // Dynamically populate causes from cause-symbols.txt
+  if (causeMenu) {
+    fetch('cause-symbols.txt')
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+        // Remove all options except the first (placeholder)
+        while (causeMenu.options.length > 1) {
+          causeMenu.remove(1);
+        }
+        lines.forEach(cause => {
+          const opt = document.createElement('option');
+          opt.value = cause;
+          opt.textContent = cause;
+          causeMenu.appendChild(opt);
+        });
+      });
+  }
   if (strategyMenu) {
     console.log('Strategy dropdown found');
     var strategyHandler = function() {

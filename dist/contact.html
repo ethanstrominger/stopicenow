@@ -13,13 +13,17 @@
     <p>To contact us for information or other purposes, email <a href="mailto:info@fixice.org?subject=Inquiry">info@fixice.org</a>.</p>
   </main>
   <script>
-    fetch('menu.html').then(r => r.text()).then(html => {
-      document.getElementById('menu-container').innerHTML = html;
-      if (typeof initMenuExperimental === 'function') {
-        initMenuExperimental();
-      }
-    });
-  </script>
-  <script src="event-listener.js"></script>
+      fetch('menu.html').then(r => r.text()).then(html => {
+        document.getElementById('menu-container').innerHTML = html;
+        var script = document.createElement('script');
+        script.src = 'event-listener.js';
+        script.onload = function() {
+          if (typeof initMenuExperimental === 'function') {
+            initMenuExperimental();
+          }
+        };
+        document.body.appendChild(script);
+      });
+    </script>
 </body>
 </html>

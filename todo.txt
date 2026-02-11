@@ -3,6 +3,7 @@ Make menu smaller.
 Save info on amount sent
 Group resources page into categories: Indivisible, Immigrant Support, others
 Facebook - another admin and other recommendations
+Fix 
 
 Figure Out
 https://amazon.com

@@ -92,19 +92,38 @@ function initMenuExperimental() {
   }
   if (strategyMenu) {
     console.log('Strategy dropdown found');
-    // Set strategy dropdown to match URL param
-    const params = new URLSearchParams(window.location.search);
-    const strategyParam = params.get('strategy');
-    if (strategyParam) {
-      strategyMenu.value = strategyParam;
-    }
+    // Dynamically populate strategies from strategy-symbols.txt
+    fetch('strategy-symbols.txt')
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+        // Remove all options except the first (placeholder)
+        while (strategyMenu.options.length > 1) {
+          strategyMenu.remove(1);
+        }
+        lines.forEach(line => {
+          const [strategy, display] = line.split(',');
+          if (strategy && display) {
+            const opt = document.createElement('option');
+            opt.value = strategy.trim();
+            opt.textContent = display.trim();
+            strategyMenu.appendChild(opt);
+          }
+        });
+        // Set strategy dropdown to match URL param
+        const params = new URLSearchParams(window.location.search);
+        const strategyParam = params.get('strategy');
+        if (strategyParam) {
+          strategyMenu.value = strategyParam;
+        }
+      });
     var strategyHandler = function() {
       console.log('Strategy dropdown changed:', strategyMenu.value);
       if (strategyMenu.value) {
         if (causeMenu) causeMenu.value = '';
-        window.location.href = 'explore.html?strategy=' + encodeURIComponent(strategyMenu.value);
+        window.location.href = 'link-explorer.html?strategy=' + encodeURIComponent(strategyMenu.value);
       } else {
-        window.location.href = 'explore.html';
+        window.location.href = 'link-explorer.html';
       }
     };
     strategyMenu.addEventListener('change', strategyHandler);
@@ -118,9 +137,9 @@ function initMenuExperimental() {
       console.log('Cause dropdown changed:', causeMenu.value);
       if (causeMenu.value) {
         if (strategyMenu) strategyMenu.value = '';
-        window.location = 'explore.html?cause=' + encodeURIComponent(causeMenu.value);
+        window.location = 'link-explorer.html?cause=' + encodeURIComponent(causeMenu.value);
       } else {
-        window.location = 'explore.html';
+        window.location = 'link-explorer.html';
       }
     };
     causeMenu.addEventListener('change', causeHandler);

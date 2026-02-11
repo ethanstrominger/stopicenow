@@ -9,9 +9,7 @@
     body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 700px; margin: auto; padding: 24px; background: linear-gradient(120deg, #f8f8f8 60%, #e3e9f7 100%); }
     /* Ensure menu is always left aligned to browser window */
     #menu {
-      position: fixed;
-      left: 0;
-      top: 0;
+      position: static;
       width: auto;
       color: #555;
       font-size: 0.98em;
@@ -22,11 +20,29 @@
   </style>
 </head>
 
-  <body style="background:#fff;">
+  <body style="background:#fff; padding-top:130px;">
+
     <div id="menu">
       <div id="menu-container"></div>
     </div>
+    <div style="display:flex; justify-content:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; margin-top:70px;">
+      <img src="eagles.jpeg" alt="Protest 2" style="max-width:160px; width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    </div>
+
     <script src="menu.js"></script>
+    <script>
+      // After menu is injected, load event-listener.js
+      function loadEventListenerScript() {
+        var script = document.createElement('script');
+        script.src = 'event-listener.js';
+        document.body.appendChild(script);
+      }
+      // Wait for menu.js to finish injecting menu.html
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a tick to ensure menu is injected
+        setTimeout(loadEventListenerScript, 200);
+      });
+    </script>
 
 
     <style>
@@ -44,11 +60,7 @@
   </div>
 
   
-  <h1>Join Our Standouts</h1>
 
-  <div style="display:flex; justify-content:center; gap:12px; margin-bottom:12px; flex-wrap:wrap;">
-    <img src="eagles.jpeg" alt="Protest 2" style="max-width:160px; width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-  </div>
 
   <div class="protest-info">
     Come join us Monday and Tuesday 11-1 to protest ICE cruelties.<br><br>

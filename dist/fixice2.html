@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking - FIX ICE</title>
+  <link rel="stylesheet" href="fixice2.css">
+  <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const menuLinks = document.getElementById('menuLinks');
+      if (menuToggle && menuLinks) {
+        menuToggle.addEventListener('click', function () {
+          menuLinks.classList.toggle('menu-links-open');
+        });
+        document.addEventListener('click', function (e) {
+          if (
+            window.innerWidth <= 1200 &&
+            !menuLinks.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            menuLinks.classList.remove('menu-links-open');
+          }
+        });
+      }
+    });
+  </script>
+
+<body>
+  <div class="fixice-title">FIX ICE</div>
+  <nav class="main-menu">
+    <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="resources.html" class="menu-item">All Resources</a>
+      <a href="protests1000districtave.html" class="menu-item">1000 District Ave</a>
+      <a href="parking.html" class="menu-item">Parking</a>
+      <a href="https://facebook.com/groups/774935765037658" target="_blank" class="menu-item">Join Facebook</a>
+      <a href="changes.html" class="menu-item">Latest Updates</a>
+    </div>
+  </nav>
+  <div class="content">
+    <h2>Parking Information</h2>
+    <div class="parking-info">
+      <p>Parking is available at 1000 District Ave and nearby lots. Please check signage for restrictions and avoid reserved spaces.</p>
+      <ul>
+        <li>Free parking in designated visitor areas</li>
+        <li>Overflow parking available on weekends</li>
+        <li>Accessible parking spots near main entrance</li>
+        <li>Do not park in spaces marked for tenants or reserved</li>
+      </ul>
+      <p>For questions or special accommodations, contact us via the <a href="contact.html">Contact</a> page.</p>
+    </div>
+  </div>
+</body>
+</html>

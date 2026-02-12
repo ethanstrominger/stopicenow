@@ -60,12 +60,17 @@ async function populateStrategies() {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Dropdown redirect logic
+    function getExploreUrl(param, value) {
+      let base = '/explore';
+      if (!base.endsWith('.html')) base += '.html';
+      return `${base}?${param}=${encodeURIComponent(value)}`;
+    }
     const strategyDropdown = document.getElementById('menu-strategy-menu');
     if (strategyDropdown) {
       strategyDropdown.addEventListener('change', function () {
         const value = strategyDropdown.value;
         if (value) {
-          window.location.href = `/explore?strategy=${encodeURIComponent(value)}`;
+          window.location.href = getExploreUrl('strategy', value);
         }
       });
     }
@@ -74,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
       causeDropdown.addEventListener('change', function () {
         const value = causeDropdown.value;
         if (value) {
-          window.location.href = `/explore?cause=${encodeURIComponent(value)}`;
+          window.location.href = getExploreUrl('cause', value);
         }
       });
     }
